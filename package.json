@@ -1,5 +1,5 @@
 {
-	"name": "codebasereactnativets",
+	"name": "code-base-react-native",
 	"version": "0.0.1",
 	"private": true,
 	"main": "index.ts",
@@ -12,8 +12,20 @@
 		"prepare": "husky install"
 	},
 	"dependencies": {
+		"@react-native-async-storage/async-storage": "~1.15.0",
+		"@react-navigation/native": "6.0.6",
+		"@react-navigation/native-stack": "6.2.5",
+		"@reduxjs/toolkit": "1.7.1",
 		"react": "17.0.2",
-		"react-native": "0.66.4"
+		"react-native": "0.66.4",
+		"react-native-gesture-handler": "~2.1.0",
+		"react-native-global-props": "1.1.5",
+		"react-native-paper": "4.11.2",
+		"react-native-reanimated": "~2.3.1",
+		"react-native-safe-area-context": "3.3.2",
+		"react-redux": "7.2.6",
+		"redux-logger": "^3.0.6",
+		"validate.js": "^0.13.1"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.12.9",
@@ -23,7 +35,9 @@
 		"@react-native-community/eslint-config": "^2.0.0",
 		"@types/jest": "^26.0.23",
 		"@types/react-native": "^0.66.4",
+		"@types/react-native-global-props": "^1.1.1",
 		"@types/react-test-renderer": "^17.0.1",
+		"@types/redux-logger": "^3.0.9",
 		"@typescript-eslint/eslint-plugin": "^5.7.0",
 		"@typescript-eslint/parser": "^5.7.0",
 		"babel-jest": "^26.6.3",
