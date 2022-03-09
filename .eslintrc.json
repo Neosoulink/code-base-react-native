@@ -10,9 +10,13 @@
 				"@typescript-eslint/no-shadow": ["error"],
 				"no-shadow": "off",
 				"no-undef": "off",
-				"jsx-quotes": ["error", "prefer-single"],
+				"jsx-quotes": ["error", "prefer-double"],
 				"no-spaced-func": "off",
-				"spaced-comment": ["error", "always", {"block": {"balanced": true}}],
+				"spaced-comment": [
+					"error",
+					"always",
+					{ "block": { "balanced": true } }
+				],
 				"no-mixed-spaces-and-tabs": ["off", "smart-tabs"],
 				"no-extra-semi": "error",
 				"semi": "off"
