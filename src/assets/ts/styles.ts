@@ -21,6 +21,7 @@ export const CONSTANT_SIZE = {
 	SCREEN_WIDTH: Dimensions.get('screen').width,
 	WINDOW_HEIGHT: Dimensions.get('window').height,
 	WINDOW_WIDTH: Dimensions.get('window').width,
+	DRAWER_HEADER_HEIGHT: 56,
 };
 
 export const CONSTANT_COLOR = {
@@ -37,10 +38,12 @@ export const CONSTANT_COLOR = {
 	success: '#2dbf09',
 	danger: '#E22323',
 	warning: '#ffdd30',
+	info: '#2979FF',
 	light: '#FCFCFC',
 	dark: '#111111',
 	white: '#FFFFFF',
 	input: '#edeef2',
+	transparent: 'transparent',
 };
 
 export const GLOBAL_STYLE = StyleSheet.create({
@@ -68,12 +71,12 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	},
 	screenStatic: {
 		height: CONSTANT_SIZE.SCREEN_HEIGHT,
-		backgroundColor: CONSTANT_COLOR.white,
+		backgroundColor: CONSTANT_COLOR.primary,
 	},
 	screenStaticNav: {
 		flex: 1,
 		marginBottom: CONSTANT_SIZE.BOTTOM_NAVBAR_HEIGHT,
-		backgroundColor: CONSTANT_COLOR.white,
+		backgroundColor: CONSTANT_COLOR.primary,
 	},
 	bgPrimary: {
 		backgroundColor: CONSTANT_COLOR.primary,
@@ -81,20 +84,20 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	bgPrimaryLight: {
 		backgroundColor: CONSTANT_COLOR.primaryLight,
 	},
-	bgSecondary: {
-		backgroundColor: CONSTANT_COLOR.secondary,
-	},
-	bgSecondaryLight: {
-		backgroundColor: CONSTANT_COLOR.secondaryLight,
-	},
 	bgLight: {
 		backgroundColor: CONSTANT_COLOR.light,
+	},
+	bgInfo: {
+		backgroundColor: CONSTANT_COLOR.info,
+	},
+	bgSuccess: {
+		backgroundColor: CONSTANT_COLOR.success,
 	},
 	bgDanger: {
 		backgroundColor: CONSTANT_COLOR.danger,
 	},
-	bgSuccess: {
-		backgroundColor: CONSTANT_COLOR.success,
+	bgWarning: {
+		backgroundColor: CONSTANT_COLOR.warning,
 	},
 	bgTransparent: {
 		backgroundColor: 'transparent',
@@ -105,17 +108,17 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	txtPrimaryLight: {
 		color: CONSTANT_COLOR.primaryLight,
 	},
-	txtSecondary: {
-		color: CONSTANT_COLOR.secondary,
-	},
-	txtSecondaryLight: {
-		color: CONSTANT_COLOR.secondaryLight,
+	txtInfo: {
+		color: CONSTANT_COLOR.info,
 	},
 	txtSuccess: {
 		color: CONSTANT_COLOR.success,
 	},
 	txtDanger: {
 		color: CONSTANT_COLOR.danger,
+	},
+	txtWarning: {
+		color: CONSTANT_COLOR.warning,
 	},
 	txtCenter: {
 		textAlign: 'center',
@@ -149,12 +152,12 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	},
 	section: {
 		backgroundColor: CONSTANT_COLOR.light,
-		padding: 10,
+		padding: CONSTANT_SIZE.SPACE_SM,
 		marginBottom: 10,
 	},
 	titleSection: {
-		color: CONSTANT_COLOR.secondary,
-		marginBottom: 10,
+		color: CONSTANT_COLOR.primary,
+		marginBottom: CONSTANT_SIZE.SPACE_SM,
 		textTransform: 'uppercase',
 		fontWeight: 'bold',
 	},
@@ -448,27 +451,21 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		elevation: 0,
 	},
 	shadowSm: {
-		shadowColor: CONSTANT_COLOR.secondary,
+		shadowColor: CONSTANT_COLOR.dark,
 		shadowOffset: { width: 0, height: 1 },
 		shadowRadius: 5,
 		shadowOpacity: 0.2,
 		elevation: 2,
 	},
 	shadow: {
-		shadowColor: CONSTANT_COLOR.secondary,
+		shadowColor: CONSTANT_COLOR.dark,
 		shadowOffset: { width: 1, height: 1.5 },
 		shadowRadius: 5,
 		shadowOpacity: 0.5,
 		elevation: 5,
 	},
 	shadowLg: {
-		// shadowColor: CONSTANT_COLOR.secondary,
-		// shadowOffset: { width: 2, height: 2 },
-		// shadowOpacity: 0.7,
-		// shadowRadius: 5,
-		// elevation: 8.5,
-
-		shadowColor: isIOS ? '#000' : CONSTANT_COLOR.secondary,
+		shadowColor: isIOS ? '#000' : CONSTANT_COLOR.dark,
 		shadowOffset: {
 			width: isIOS ? 0 : 2,
 			height: 2,
@@ -477,6 +474,9 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		shadowRadius: isIOS ? 3.84 : 5,
 
 		elevation: 8.5,
+	},
+	rounded0: {
+		borderRadius: 0,
 	},
 	roundedSm: {
 		borderRadius: 5,
@@ -495,23 +495,23 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		borderWidth: 0,
 	},
 	borderSm: {
-		borderColor: CONSTANT_COLOR.secondaryLight,
+		borderColor: CONSTANT_COLOR.muted,
 		borderWidth: 0.5,
 	},
 	border: {
-		borderColor: CONSTANT_COLOR.secondaryLight,
+		borderColor: CONSTANT_COLOR.muted,
 		borderWidth: 1,
 	},
 	borderMd: {
-		borderColor: CONSTANT_COLOR.secondaryLight,
+		borderColor: CONSTANT_COLOR.muted,
 		borderWidth: 2,
 	},
 	borderLg: {
-		borderColor: CONSTANT_COLOR.secondaryLight,
+		borderColor: CONSTANT_COLOR.muted,
 		borderWidth: 4,
 	},
 	separator: {
-		borderTopColor: CONSTANT_COLOR.secondaryLight,
+		borderTopColor: CONSTANT_COLOR.muted,
 		borderTopWidth: 1,
 		marginVertical: 10,
 		padding: 0,
@@ -524,6 +524,27 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 		backgroundColor: 'rgba(0,0,0,0.3)',
+	},
+	positionAbsolute: {
+		position: 'absolute',
+	},
+	positionRelative: {
+		position: 'relative',
+	},
+	positionReset: {
+		position: undefined,
+	},
+	t0: {
+		top: 0,
+	},
+	b0: {
+		bottom: 0,
+	},
+	l0: {
+		left: 0,
+	},
+	r0: {
+		right: 0,
 	},
 	card: {
 		position: 'relative',
@@ -570,7 +591,7 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	selectItem: {
 		width: '100%',
 		height: '100%',
-		color: CONSTANT_COLOR.secondaryLight,
+		color: CONSTANT_COLOR.muted,
 		fontSize: 15,
 	},
 	statsContainer: {
@@ -586,12 +607,12 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		flex: 1,
 	},
 	statAmount: {
-		color: CONSTANT_COLOR.secondary,
+		color: CONSTANT_COLOR.muted,
 		fontSize: 18,
 		fontWeight: 'bold',
 	},
 	statTitle: {
-		color: CONSTANT_COLOR.secondaryLight,
+		color: CONSTANT_COLOR.muted,
 		fontSize: 12,
 		fontWeight: '500',
 		textTransform: 'capitalize',
@@ -604,7 +625,7 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		marginBottom: 20,
 	},
 	inputTitle: {
-		color: CONSTANT_COLOR.secondaryLight,
+		color: CONSTANT_COLOR.muted,
 		fontSize: 10,
 		textTransform: 'uppercase',
 		marginBottom: 0,
@@ -618,7 +639,7 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		height: 40,
 		borderBottomWidth: 1,
 		borderBottomColor: CONSTANT_COLOR.primary,
-		color: CONSTANT_COLOR.secondaryLight,
+		color: CONSTANT_COLOR.muted,
 		fontSize: 15,
 		paddingHorizontal: 10,
 	},
@@ -654,6 +675,9 @@ export const GLOBAL_STYLE = StyleSheet.create({
 	},
 	flex1: {
 		flex: 1,
+	},
+	flexWrap: {
+		flexWrap: 'wrap',
 	},
 	tableBtn: {
 		padding: 5,
@@ -693,11 +717,7 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		backgroundColor: CONSTANT_COLOR.primaryLight,
 		borderColor: CONSTANT_COLOR.primaryLight,
 	},
-	btnSecondary: {
-		backgroundColor: CONSTANT_COLOR.secondary,
-		borderColor: CONSTANT_COLOR.secondary,
-	},
-	btnTopLeft: {
+	floatBtnTopLeft: {
 		position: 'absolute',
 		top: 30,
 		left: 20,
@@ -706,9 +726,8 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		borderRadius: 40 / 2,
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundColor: 'rgba(22, 22, 43, 0.2)',
 	},
-	btnBottomRight: {
+	floatBtnBottomRight: {
 		position: 'absolute',
 		bottom: 20,
 		right: 20,
@@ -717,16 +736,37 @@ export const GLOBAL_STYLE = StyleSheet.create({
 		borderRadius: 40 / 2,
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundColor: 'rgba(22, 22, 43, 0.2)',
-	},
-	accordionTitle: {
-		color: CONSTANT_COLOR.secondary,
 	},
 	image: {
 		flex: 1,
 		height: undefined,
 		width: undefined,
 		resizeMode: 'cover',
+	},
+	inputPicker: {
+		borderColor: CONSTANT_COLOR.input,
+		borderWidth: 1,
+		height: 30,
+		width: '100%',
+		color: CONSTANT_COLOR.muted,
+		borderRadius: 7,
+		display: 'flex',
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'space-between',
+		paddingHorizontal: 5,
+	},
+	inputPickerLabel: {
+		fontSize: 12,
+		color: CONSTANT_COLOR.muted,
+		paddingRight: 0,
+		width: '85%',
+	},
+	inputPickerIcon: {
+		display: 'flex',
+		flexDirection: 'row',
+		justifyContent: 'flex-end',
+		width: '15%',
 	},
 	textarea: {
 		borderColor: CONSTANT_COLOR.mutedLight,
