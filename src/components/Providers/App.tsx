@@ -2,8 +2,10 @@ import React from 'react';
 import { setCustomTextInput, setCustomText } from 'react-native-global-props';
 
 // STORE
-import { useAppDispatch } from '../../store/hooks';
 import { setGroup, ROUTES_GROUPS } from '../../store/features/navigation';
+
+// HOOKS
+import { useAppDispatch } from '../../hooks';
 
 // STYLES
 import {

@@ -7,7 +7,6 @@ import { GroupNameType } from '../store/features/navigation/types';
 import { getReactComponentProps } from '../helpers/utils';
 
 // SCREENS
-import DrawerNavigator from './BottomTabsNavigator';
 import SCREENS from '../screens/index';
 
 const STACK_SCREEN = createNativeStackNavigator().Screen;
@@ -23,7 +22,7 @@ const STACK_ROUTES_GROUPS: StackScreenGroupType = {
 	APP: [
 		{
 			name: 'STACK/HOME',
-			component: DrawerNavigator,
+			component: SCREENS.Home,
 		},
 	],
 	BLANK: [
@@ -36,26 +35,6 @@ const STACK_ROUTES_GROUPS: StackScreenGroupType = {
 		{
 			name: 'STACK/LOADING',
 			component: SCREENS.Loading,
-		},
-	],
-	REGISTRATION: [
-		{
-			name: 'STACK/SIGN_UP',
-			component: SCREENS.REGISTRATION.SignUp,
-		},
-		{
-			name: 'STACK/SIGN_IN',
-			component: SCREENS.REGISTRATION.SignIn,
-		},
-		{
-			name: 'STACK/FORGOT',
-			component: SCREENS.REGISTRATION.Forgot,
-		},
-	],
-	LANDING: [
-		{
-			name: 'STACK/WELCOME',
-			component: SCREENS.LANDING.Welcome,
 		},
 	],
 };

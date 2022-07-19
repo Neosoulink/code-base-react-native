@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // STORE
-import { useAppSelector } from '../store/hooks';
+import { useAppSelector } from '../hooks';
 import { getGroup } from '../store/features/navigation';
 
 // ROUTING
