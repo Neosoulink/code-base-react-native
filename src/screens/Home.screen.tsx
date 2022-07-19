@@ -17,7 +17,7 @@ function HomeScreen({}) {
 				barStyle="light-content"
 			/>
 			<Text>Welcome to your new app build with</Text>
-			<Text>Typescript / Expo / Paper / React Navigation / Redux</Text>
+			<Text>Typescript / Paper / React Navigation / Redux / Vector Icons</Text>
 		</View>
 	);
 }
