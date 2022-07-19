@@ -25,14 +25,12 @@ This codebase provides these features:
 - Commit rules management with [commitLint & husky](https://commitlint.js.org/#/reference-cli)
 
 <!-- TODO: Add more folders and files descriptions -->
+
 ### 📋 App structure
 
     .
-    ├── .expo-shared
     ├── .husky
-    ├── .jest
     ├── .vscode
-    ├── script
     ├── src
       ├── assets # Contain app assets (imgs, fonts, ...)
       ├── components # Contain components used in the app
@@ -43,7 +41,9 @@ This codebase provides these features:
       ├── router
       ├── screens
       ├── store # Redux store
+      ├── tests
       └── App.tsx
+    ├── .buckconfig
     ├── .editorconfig
     ├── .eslintrc.json
     ├── .gitattributes
@@ -67,7 +67,8 @@ This codebase provides these features:
 
 - The latest NPM/Yarn version installed in your computer
 - Node.js V14.x.x or higher installed in your computer
-- The latest version of expo app installed in your phone (or virtual device)
+
+> More details [here](https://reactnative.dev/docs/environment-setup)
 
 ### ⚡ Installation & Running
 
@@ -76,7 +77,9 @@ This codebase provides these features:
 - After these steps, run `yarn run start` or `yarn run start` command to start bundle server
 
 <!-- TODO: Add contribution -->
+
 ## 🧪 Testing
 
 <!-- TODO: Add contribution -->
+
 ### 🤝 Contribution
